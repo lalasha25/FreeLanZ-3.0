@@ -6,7 +6,7 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah **Software Architecture**.
 
 ---
 
-## 🏗️ Arsitektur Sistem & Struktur Folder
+## Arsitektur Sistem & Struktur Folder
 
 Proyek ini terbagi menjadi dua bagian utama:
 1. **BackendFLZ**: RESTful API dibangun dengan **NestJS**, menggunakan **Prisma ORM** untuk interaksi dengan database **MySQL**.
@@ -57,7 +57,7 @@ Backend dikembangkan menggunakan **NestJS** dengan pola desain Modular yang soli
 - **Validation**: `class-validator` & `class-transformer` (validasi payload request secara ketat)
 - **API Documentation**: Swagger (`@nestjs/swagger`)
 
-### 🔑 Fitur Utama Backend
+### Fitur Utama Backend
 1. **Autentikasi (JWT Auth)**: Register Client & Freelancer dengan password hashing (bcrypt), serta validasi route menggunakan `JwtAuthGuard` dan `RolesGuard`.
 2. **Manajemen Portofolio**: Freelancer dapat membuat, memperbarui, menampilkan, dan menghapus item portofolio mereka.
 3. **Manajemen Request Proyek**:
@@ -66,7 +66,7 @@ Backend dikembangkan menggunakan **NestJS** dengan pola desain Modular yang soli
 4. **Chat System**: Layanan pertukaran pesan antar pengguna yang terikat langsung pada ID Project Request tertentu.
 5. **Static & File Upload Service**: Upload foto profil, foto ID/KTP, dan CV PDF freelancer. File disimpan secara lokal dan disajikan secara statis via `/uploads`.
 
-### 🗄️ Rancangan Database (Prisma Schema)
+### Rancangan Database (Prisma Schema)
 Rancangan database relasional menggunakan model-model berikut:
 
 - **User**: Menyimpan data user (nama, email, password, role `CLIENT` / `FREELANCER`, bio, telp, url CV, url Avatar, dll).
@@ -76,18 +76,18 @@ Rancangan database relasional menggunakan model-model berikut:
 
 ---
 
-## 🎨 Frontend (FE) Documentation
+## Frontend (FE) Documentation
 
 Frontend dikembangkan menggunakan **ReactJS** yang interaktif dan dinamis dengan fokus pada pengalaman pengguna yang premium.
 
-### 🛠️ Tech Stack & Library Frontend
+### Tech Stack & Library Frontend
 - **Framework**: React 19
 - **Bundler**: Vite 8
 - **HTTP Client**: Axios (dengan interceptor untuk menyisipkan header `Authorization: Bearer <token>` secara otomatis dari `localStorage`).
 - **Styling**: Vanilla CSS dengan desain modern dan responsif.
 - **Routing**: State-based routing dinamis di `App.jsx` untuk performa navigasi instan tanpa overhead browser router reload.
 
-### 🌟 Fitur Utama Frontend
+### Fitur Utama Frontend
 1. **Landing Page**: Dashboard perkenalan dengan visual yang memikat.
 2. **Role Selection & Registration**: Form pendaftaran terpisah antara Client (data standar) dan Freelancer (multi-step form untuk upload CV, keahlian, dan foto identitas).
 3. **Explore Page (Client)**: Halaman penelusuran freelancer dengan opsi pencarian dan filter keahlian.
@@ -99,7 +99,7 @@ Frontend dikembangkan menggunakan **ReactJS** yang interaktif dan dinamis dengan
 
 ---
 
-## 🚀 Panduan Setup & Menjalankan Aplikasi
+## Panduan Setup & Menjalankan Aplikasi
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi di komputer lokal Anda:
 

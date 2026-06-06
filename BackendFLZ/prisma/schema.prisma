@@ -1,0 +1,81 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum Role {
+  CLIENT
+  FREELANCER
+}
+
+enum RequestStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  password    String
+  role        Role
+  phone       String?
+  bio         String?  @db.Text
+  skills      String?  @db.Text
+  idPhotoUrl  String?
+  cvUrl       String?
+  avatarUrl   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  portfolios       Portfolio[]
+  sentRequests     ProjectRequest[] @relation("ClientRequests")
+  receivedRequests ProjectRequest[] @relation("FreelancerRequests")
+  sentMessages     ChatMessage[]    @relation("SenderMessages")
+}
+
+model Portfolio {
+  id           Int      @id @default(autoincrement())
+  title        String
+  description  String   @db.Text
+  imageUrl     String?
+  projectUrl   String?
+  freelancerId Int
+  freelancer   User     @relation(fields: [freelancerId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ProjectRequest {
+  id           Int           @id @default(autoincrement())
+  title        String
+  description  String        @db.Text
+  budget       Float
+  status       RequestStatus @default(PENDING)
+  clientId     Int
+  client       User          @relation("ClientRequests", fields: [clientId], references: [id])
+  freelancerId Int
+  freelancer   User          @relation("FreelancerRequests", fields: [freelancerId], references: [id])
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  messages     ChatMessage[]
+}
+
+model ChatMessage {
+  id        Int            @id @default(autoincrement())
+  message   String         @db.Text
+  requestId Int
+  request   ProjectRequest @relation(fields: [requestId], references: [id])
+  senderId  Int
+  sender    User           @relation("SenderMessages", fields: [senderId], references: [id])
+  createdAt DateTime       @default(now())
+}

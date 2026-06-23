@@ -119,8 +119,8 @@ Pastikan Anda sudah menginstal:
    ```
 3. Buat file `.env` di dalam folder `BackendFLZ` dan sesuaikan URL database Anda:
    ```env
-   DATABASE_URL="mysql://root:password_mysql_kamu@localhost:3306/freelanz_db"
-   JWT_SECRET="rahasia_super_aman_12345"
+   DATABASE_URL=""
+   JWT_SECRET=""
    PORT=5000
    ```
 4. Jalankan migrasi Prisma untuk membuat tabel database otomatis:
@@ -148,46 +148,5 @@ Pastikan Anda sudah menginstal:
    ```
 4. Frontend akan berjalan di URL default Vite (biasanya `http://localhost:5173`). Buka URL tersebut di browser Anda.
 
----
 
-## 📄 Panduan Step-by-Step Commit & Push ke GitHub
 
-Karena repositori Git Anda sekarang sudah bersih (hanya mendeteksi **109 file** project Anda saja, tanpa terganggu folder kuliah lain atau `node_modules` karena sudah disaring `.gitignore`), berikut adalah langkah-langkah untuk melakukan commit pertama kali dan mengirimkannya ke GitHub:
-
-### Langkah 1: Tambahkan Semua File ke Git Staging Area
-Jalankan perintah ini di root folder proyek (`FreeLanz 3.0`):
-```bash
-git add .
-```
-
-### Langkah 2: Buat Commit Pertama Anda
-Buat catatan commit untuk menandai status awal kode program Anda:
-```bash
-git commit -m "Initial commit: Setup Frontend and Backend FreeLanZ 3.0"
-```
-
-### Langkah 3: Buat Repositori Baru di GitHub
-1. Buka browser dan pergi ke [GitHub](https://github.com/).
-2. Login dan klik tombol **New** (atau **Create repository**).
-3. Isi **Repository name** (contoh: `FreeLanz-3.0`).
-4. Pilih **Public** atau **Private** sesuai kebutuhan Anda.
-5. **PENTING**: Jangan centang "Add a README file", "Add .gitignore", atau "Choose a license" karena kita sudah memilikinya secara lokal.
-6. Klik **Create repository**.
-
-### Langkah 4: Hubungkan Repo Lokal dengan GitHub & Push
-Setelah repositori GitHub dibuat, Anda akan diberikan beberapa baris perintah. Jalankan perintah di bawah ini pada terminal proyek Anda:
-
-1. Ubah branch utama menjadi `main` (standar GitHub):
-   ```bash
-   git branch -M main
-   ```
-2. Hubungkan url GitHub Anda ke remote repository lokal (Ganti `<URL_REPOSiTORI_GITHUB_KAMU>` dengan URL yang Anda dapat dari langkah 3, contoh: `https://github.com/username/FreeLanz-3.0.git`):
-   ```bash
-   git remote add origin <URL_REPOSITORI_GITHUB_KAMU>
-   ```
-3. Unggah seluruh file ke GitHub:
-   ```bash
-   git push -u origin main
-   ```
-
-Setelah proses upload selesai, silakan refresh halaman GitHub Anda. Semua file backend, frontend, dan file `README.md` ini akan tampil dengan rapi di sana! 🚀

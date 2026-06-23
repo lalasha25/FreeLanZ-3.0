@@ -45,11 +45,11 @@ FreeLanz 3.0/
 
 ---
 
-## 💻 Backend (BE) Documentation
+## Backend (BE) Documentation
 
 Backend dikembangkan menggunakan **NestJS** dengan pola desain Modular yang solid. Setiap domain fungsional memiliki modulnya sendiri (`Module`, `Controller`, dan `Service`) guna mematuhi prinsip *Separation of Concerns* (SoC) dan *Single Responsibility Principle* (SRP).
 
-### 🛠️ Tech Stack & Library Backend
+### Tech Stack & Library Backend
 - **Core Framework**: NestJS (v11)
 - **Database ORM**: Prisma Client (v7)
 - **Database Server**: MySQL / MariaDB

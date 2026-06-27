@@ -10,7 +10,7 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah **Software Architecture**.
 
 Proyek ini terbagi menjadi dua bagian utama:
 1. **BackendFLZ**: RESTful API dibangun dengan **NestJS**, menggunakan **Prisma ORM** untuk interaksi dengan database **MySQL**.
-2. **FrontendFLZ/FreeLanz**: Single Page Application (SPA) dibangun dengan **ReactJS 19**, menggunakan **Vite** sebagai bundler dan **Axios** untuk komunikasi HTTP ke backend.
+2. **FrontendFLZ/FreeLanz**: Single Page Application (SPA) dibangun dengan **ReactJS**, menggunakan **Vite** sebagai bundler dan **Axios** untuk komunikasi HTTP ke backend.
 
 ### Struktur Folder
 ```text
